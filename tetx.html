@@ -1,0 +1,21 @@
+<html>
+<script>
+var mysql = require('mysql');
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "742545",
+  database: "rest"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  /*Select all customers with the address "Park Lane 38":*/
+  con.query("SELECT * FROM product WHERE id = '8'", function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+</script>
+<p id="list"></p>
+</html>
